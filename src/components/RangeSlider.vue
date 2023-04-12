@@ -2,9 +2,9 @@
   <div class="price-slider">
     <div class='range-slider'>
       <input type="range" :min="min" :max="max" step="1" v-model="sliderMin">
-      <input type="number" :min="min" :max="max" step="1" v-model="sliderMin">
+      <input type="number" :min="min" :max="max" step="1" v-model="sliderMin" class="d-inflex rs-float-left">
       <input type="range" :min="min" :max="max" step="1" v-model="sliderMax">
-      <input type="number" :min="min" :max="max" step="1" v-model="sliderMax">
+      <input type="number" :min="min" :max="max" step="1" v-model="sliderMax" class="d-inflex rs-float-right">
     </div>
   </div>
 </template>
@@ -69,6 +69,23 @@ export default {
   text-align: center;
   position: relative;
   height: 6em;
+}
+.range-slider input{
+  background: transparent !important;
+  font-size: 1rem;
+  width: auto !important;
+}
+.range-slider .d-inflex {
+    display: inline-flex;
+    float: left;
+}
+
+.range-slider .rs-float-left {
+    float: left;
+}
+
+.range-slider .rs-float-right {
+    float: right;
 }
 
 .range-slider input[type=range] {
