@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :min="500" :max="50000" v-model="value"/>
   </div>
 </template>
 
@@ -12,7 +12,15 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  data() {
+      return {
+        value: {
+          min: 0,
+          max: 0
+        }
+      }
+    }
 }
 </script>
 
