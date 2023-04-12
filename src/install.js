@@ -1,7 +1,7 @@
 import RangeSlider from "./components/RangeSlider.vue";
 
 const VueRangeSlider = {
- install(Vue, options) {
+ install(Vue) {
   // Let's register our component globally
   // https://vuejs.org/v2/guide/components-registration.html
   Vue.component("range-slider", RangeSlider);
