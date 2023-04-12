@@ -1,69 +1,69 @@
 <template>
-    <div class="price-slider">
-        <div class='range-slider'>
-            <input type="range" :min="min" :max="max" step="1" v-model="sliderMin">
-            <input type="number" :min="min" :max="max" step="1" v-model="sliderMin">
-            <input type="range" :min="min" :max="max" step="1" v-model="sliderMax">
-            <input type="number" :min="min" :max="max" step="1" v-model="sliderMax">
-        </div>
+  <div class="price-slider">
+    <div class='range-slider'>
+      <input type="range" :min="min" :max="max" step="1" v-model="sliderMin">
+      <input type="number" :min="min" :max="max" step="1" v-model="sliderMin">
+      <input type="range" :min="min" :max="max" step="1" v-model="sliderMax">
+      <input type="number" :min="min" :max="max" step="1" v-model="sliderMax">
     </div>
-  </template>
-  <script>
-  export default {
-    props: {
-        min: {
-            type: Number,
-            required: true
-        },
-        max: {
-            type: Number,
-            required: true
-        },
-        value: {
-            type: Object,
-            required: true
-        }
+  </div>
+</template>
+<script>
+export default {
+  props: {
+    min: {
+      type: Number,
+      required: true
     },
-    data() {
-      return {
-        minAngle: JSON.parse(JSON.stringify(this.min)),
-        maxAngle: JSON.parse(JSON.stringify(this.max))
-      };
+    max: {
+      type: Number,
+      required: true
     },
-    computed: {
-        sliderMin: {
-            get() {
-                var val = parseInt(this.minAngle);
-                return val;
-            },
-            set(val) {
-                val = parseInt(val);
-                if (val > this.maxAngle) {
-                    this.maxAngle = val;
-                }
-                this.minAngle = val;
-                this.value.min = val
-            }
-        },
-        sliderMax: {
-            get() {
-                var val = parseInt(this.maxAngle);
-                return val;
-            },
-            set(val) {
-                val = parseInt(val);
-                if (val < this.minAngle) {
-                this.minAngle = val;
-                }
-                this.maxAngle = val;
-                this.value.max = val
-            }
-        }
+    value: {
+      type: Object,
+      required: true
     }
-  };
-  </script>
-  <style scoped>
-   .range-slider {
+  },
+  data() {
+    return {
+      minAngle: JSON.parse(JSON.stringify(this.min)),
+      maxAngle: JSON.parse(JSON.stringify(this.max))
+    };
+  },
+  computed: {
+    sliderMin: {
+      get() {
+        var val = parseInt(this.minAngle);
+        return val;
+      },
+      set(val) {
+        val = parseInt(val);
+        if (val > this.maxAngle) {
+          this.maxAngle = val;
+        }
+        this.minAngle = val;
+        this.value.min = val
+      }
+    },
+    sliderMax: {
+      get() {
+        var val = parseInt(this.maxAngle);
+        return val;
+      },
+      set(val) {
+        val = parseInt(val);
+        if (val < this.minAngle) {
+          this.minAngle = val;
+        }
+        this.maxAngle = val;
+        this.value.max = val
+      }
+    }
+  }
+};
+</script>
+<style scoped>
+.range-slider {
   width: 100%;
   margin: auto;
   text-align: center;
@@ -140,4 +140,4 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -7px;
 }
 
-    </style>
+</style>
