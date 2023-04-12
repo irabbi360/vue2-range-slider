@@ -7,8 +7,8 @@
     "name": "Fazle Rabbi",
     "email": "fazrabbi010@gmail.com"
   },
-  "repository": "https://github.com/irabbi360/vue-range-slider",
-  "bugs": "https://github.com/irabbi360/vue-range-slider/issues",
+  "repository": "https://github.com/irabbi360/vue2-range-slider",
+  "bugs": "https://github.com/irabbi360/vue2-range-slider/issues",
   "keywords": [
     "keywords",
     "go",
@@ -21,10 +21,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-library": "vue-cli-service build --target lib --name vue-range-slider ./src/install.js",
+    "build-library": "vue-cli-service build --target lib --name vue2-range-slider ./src/install.js",
     "lint": "vue-cli-service lint"
   },
-  "main": ".dist/vue-range-slider.common.js",
+  "main": ".dist/vue2-range-slider.common.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
