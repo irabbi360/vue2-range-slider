@@ -18,7 +18,7 @@ npm install --save vue2-range-slider
 ```
 ## Yarn
 ```
-yarn add vue-range-slider
+yarn add vue2-range-slider
 ```
 
 ## Usage
@@ -29,9 +29,8 @@ Just import vue2-range-slider component and use it in your components. The props
 ```html
 <template>
   <range-slider
-    class="slider"
-    min="10"
-    max="1000"
+    :min="10"
+    :max="1000"
     step="10"
     v-model="sliderValue">
   </range-slider>
