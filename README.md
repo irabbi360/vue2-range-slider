@@ -75,8 +75,26 @@ Vue.use(Vue2RangeSlider)
 
 ### Use Components Locally
 ```
-import VueRangeSlider from 'vue2-range-slider'
+import RangeSlider from 'vue2-range-slider'
 ```
+
+### Nuxt.js Usage
+
+create a plugin file `vue2-range-slider.js` inside `/plugins` dir
+
+```js
+import Vue from 'vue'
+import RangeSlider from 'vue2-range-slider'
+
+Vue.component('range-slider', RangeSlider)
+```
+
+import a plugin in nuxt.config.js with disable ssr mode
+
+```js
+plugins: [{ src: '~/plugins/vue2-range-slider', ssr: false }]
+```
+
 ## License
 
 MIT
