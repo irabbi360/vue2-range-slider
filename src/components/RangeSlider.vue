@@ -70,39 +70,32 @@ export default {
   position: relative;
   height: 6em;
 }
-
 .range-slider input {
   background: transparent !important;
-  font-size: 1rem;
   width: 100% !important;
   padding-left: 0 !important;
 }
-
 .range-slider .left-input {
   display: inline-flex;
   float: left;
   width: auto !important;
 }
-
 .range-slider .right-input {
   display: inline-flex;
   float: right;
   width: auto !important;
 }
-
 .range-slider input[type=range] {
   position: absolute;
   left: 0;
   bottom: 0;
   border: none !important;
 }
-
 .range-slider input[type=number] {
   border: 1px solid #ddd;
   text-align: center;
   -moz-appearance: textfield;
 }
-
 .range-slider input[type=number]::-webkit-outer-spin-button,
 .range-slider input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -112,28 +105,22 @@ export default {
 .range-slider input[type=number]:out-of-range {
   border: 2px solid #ff6347;
 }
-
 .range-slider input[type=range] {
   -webkit-appearance: none;
   width: 100%;
 }
-
 .range-slider input[type=range]:focus {
   outline: none;
 }
-
 .range-slider input[type=range]:focus::-webkit-slider-runnable-track {
   background: #2497e3;
 }
-
 .range-slider input[type=range]:focus::-ms-fill-lower {
   background: #2497e3;
 }
-
 .range-slider input[type=range]:focus::-ms-fill-upper {
   background: #2497e3;
 }
-
 .range-slider input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
@@ -144,7 +131,6 @@ export default {
   box-shadow: none;
   border: 0;
 }
-
 .range-slider input[type=range]::-webkit-slider-thumb {
   z-index: 2;
   position: relative;
@@ -158,5 +144,4 @@ export default {
   -webkit-appearance: none;
   margin-top: -7px;
 }
-
 </style>
