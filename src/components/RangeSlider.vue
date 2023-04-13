@@ -2,9 +2,9 @@
   <div class="price-slider">
     <div class='range-slider'>
       <input type="range" :min="min" :max="max" step="1" v-model="sliderMin">
-      <input type="number" :min="min" :max="max" step="1" v-model="sliderMin" class="d-inflex rs-float-left">
+      <input type="number" :min="min" :max="max" step="1" v-model="sliderMin" class="left-input">
       <input type="range" :min="min" :max="max" step="1" v-model="sliderMax">
-      <input type="number" :min="min" :max="max" step="1" v-model="sliderMax" class="d-inflex rs-float-right">
+      <input type="number" :min="min" :max="max" step="1" v-model="sliderMax" class="right-input">
     </div>
   </div>
 </template>
@@ -70,69 +70,71 @@ export default {
   position: relative;
   height: 6em;
 }
-.range-slider input{
+
+.range-slider input {
   background: transparent !important;
   font-size: 1rem;
+  width: 100% !important;
+  padding-left: 0 !important;
+}
+
+.range-slider .left-input {
+  display: inline-flex;
+  float: left;
   width: auto !important;
 }
-.range-slider .d-inflex {
-    display: inline-flex;
-    float: left;
-}
 
-.range-slider .rs-float-left {
-    float: left;
-}
-
-.range-slider .rs-float-right {
-    float: right;
+.range-slider .right-input {
+  display: inline-flex;
+  float: right;
+  width: auto !important;
 }
 
 .range-slider input[type=range] {
   position: absolute;
   left: 0;
   bottom: 0;
+  border: none !important;
 }
 
-input[type=number] {
+.range-slider input[type=number] {
   border: 1px solid #ddd;
   text-align: center;
-  font-size: 1.6em;
   -moz-appearance: textfield;
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+.range-slider input[type=number]::-webkit-outer-spin-button,
+.range-slider input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-input[type=number]:invalid,
-input[type=number]:out-of-range {
+.range-slider input[type=number]:invalid,
+.range-slider input[type=number]:out-of-range {
   border: 2px solid #ff6347;
 }
 
-input[type=range] {
+.range-slider input[type=range] {
   -webkit-appearance: none;
   width: 100%;
 }
 
-input[type=range]:focus {
+.range-slider input[type=range]:focus {
   outline: none;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+.range-slider input[type=range]:focus::-webkit-slider-runnable-track {
   background: #2497e3;
 }
 
-input[type=range]:focus::-ms-fill-lower {
+.range-slider input[type=range]:focus::-ms-fill-lower {
   background: #2497e3;
 }
 
-input[type=range]:focus::-ms-fill-upper {
+.range-slider input[type=range]:focus::-ms-fill-upper {
   background: #2497e3;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+.range-slider input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
   cursor: pointer;
@@ -143,7 +145,7 @@ input[type=range]::-webkit-slider-runnable-track {
   border: 0;
 }
 
-input[type=range]::-webkit-slider-thumb {
+.range-slider input[type=range]::-webkit-slider-thumb {
   z-index: 2;
   position: relative;
   box-shadow: 0px 0px 0px #000;
