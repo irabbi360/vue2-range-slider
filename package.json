@@ -24,7 +24,7 @@
     "build-library": "vue-cli-service build --target lib --name vue2-range-slider ./src/install.js",
     "lint": "vue-cli-service lint"
   },
-  "main": ".dist/vue2-range-slider.common.js",
+  "main": "dist/vue2-range-slider.common.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
