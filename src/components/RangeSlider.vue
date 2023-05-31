@@ -1,65 +1,56 @@
 <template>
-  <div class="price-slider">
-    <div class='range-slider'>
-      <input type="range" :min="min" :max="max" step="1" v-model="sliderMin">
-      <input type="number" :min="min" :max="max" step="1" v-model="sliderMin" class="left-input">
-      <input type="range" :min="min" :max="max" step="1" v-model="sliderMax">
-      <input type="number" :min="min" :max="max" step="1" v-model="sliderMax" class="right-input">
+    <div class="price-slider">
+        <div class="range-slider">
+            <input type="range" :min="min" :max="max" step="1" v-model="sliderMin">
+            <input type="number" :min="min" :max="max" step="1" v-model="sliderMin" class="left-input">
+            <input type="range" :min="min" :max="max" step="1" v-model="sliderMax">
+            <input type="number" :min="min" :max="max" step="1" v-model="sliderMax" class="right-input">
+        </div>
     </div>
-  </div>
 </template>
+
 <script>
 export default {
-  props: {
-    min: {
-      type: Number,
-      required: true
-    },
-    max: {
-      type: Number,
-      required: true
-    },
-    value: {
-      type: Object,
-      required: true
-    }
-  },
-  data() {
-    return {
-      minAngle: JSON.parse(JSON.stringify(this.min)),
-      maxAngle: JSON.parse(JSON.stringify(this.max))
-    };
-  },
-  computed: {
-    sliderMin: {
-      get() {
-        var val = parseInt(this.minAngle);
-        return val;
-      },
-      set(val) {
-        val = parseInt(val);
-        if (val > this.maxAngle) {
-          this.maxAngle = val;
+    props: {
+        min: {
+            type: Number,
+            required: true
+        },
+        max: {
+            type: Number,
+            required: true
+        },
+        value: {
+            type: Object,
+            required: true
         }
-        this.minAngle = val;
-        this.value.min = val
-      }
     },
-    sliderMax: {
-      get() {
-        var val = parseInt(this.maxAngle);
-        return val;
-      },
-      set(val) {
-        val = parseInt(val);
-        if (val < this.minAngle) {
-          this.minAngle = val;
+    data() {
+        return {
+            minAngle: JSON.parse(JSON.stringify(this.min)),
+            maxAngle: JSON.parse(JSON.stringify(this.max))
+        };
+    },
+    computed: {
+        sliderMin: {
+            get() {
+                return parseInt(this.minAngle);
+            },
+            set(val) {
+                this.minAngle = val;
+                this.value.min = val;
+            }
+        },
+        sliderMax: {
+            get() {
+                return parseInt(this.maxAngle);
+            },
+            set(val) {
+                this.maxAngle = val;
+                this.value.max = val;
+            }
         }
-        this.maxAngle = val;
-        this.value.max = val
-      }
     }
-  }
 };
 </script>
 <style scoped>
